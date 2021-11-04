@@ -1,8 +1,39 @@
 <h1>This is the app component!</h1>
 
-<app-hello-world></app-hello-world>
+<section>
+  <div>
+    <figure class="image">
+      <img [src]="image" alt="foto" class="f-width" />
+    </figure>
+    <span>{{name}}</span>
+  </div>
 
-<!--
-  Uncomment this if you want to use pages and routes
-  <router-outlet></router-outlet>
--->
+  <mat-accordion>
+    <mat-expansion-panel
+      *ngFor="let payment of payments; trackBy: trackPayment"
+    >
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ payment.name }}
+        </mat-panel-title>
+        <mat-panel-description>
+          ${{payment.amount}}
+          <mat-icon>{{getIcon(payment.type)}}</mat-icon>
+        </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div>
+        <app-payment-form
+          [amount]="payment.amount"
+          [type]="payment.type"
+          (emitter)="handleChange($event, payment.id)"
+        ></app-payment-form>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+
+  <div>
+    <button mat-raised-button color="primary">
+      $ {{getTotal()}}
+    </button>
+  </div>
+</section>
