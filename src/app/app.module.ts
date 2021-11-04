@@ -7,11 +7,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { HelloWorldComponent } from './components/hello-world/hello-world.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { PaymentFormComponent } from './components/payment-form/payment-form.component';
+import { HomePageComponent } from './pages/home-page/home-page.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HelloWorldComponent,
+    PaymentFormComponent,
+    HomePageComponent,
   ],
   imports: [
     BrowserModule,
