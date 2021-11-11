@@ -9,6 +9,7 @@ import { HelloWorldComponent } from './components/hello-world/hello-world.compon
 import { ReactiveFormsModule } from '@angular/forms';
 import { PaymentFormComponent } from './components/payment-form/payment-form.component';
 import { HomePageComponent } from './pages/home-page/home-page.component';
+import { PaymentFormContainerComponent } from './components/payment-form-container/payment-form-container.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { HomePageComponent } from './pages/home-page/home-page.component';
     HelloWorldComponent,
     PaymentFormComponent,
     HomePageComponent,
+    PaymentFormContainerComponent,
   ],
   imports: [
     BrowserModule,
