@@ -1,6 +1,6 @@
-import { IPaymentType } from "../interfaces/payment.interface";
+import { IPaymentMethod } from "../interfaces/payment.interface";
 
-export const paymentTypes: IPaymentType[] = [
+export const paymentMethods: IPaymentMethod[] = [
   {
     name: 'Cash',
     value: 1,
