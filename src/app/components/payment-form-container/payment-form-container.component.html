@@ -1,0 +1,35 @@
+<div>
+  <figure class="image">
+    <img [src]="image" alt="foto" class="f-width" />
+  </figure>
+  <span>{{name}}</span>
+</div>
+
+<mat-accordion>
+  <mat-expansion-panel
+    *ngFor="let payment of payments; trackBy: trackPayment"
+  >
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+        {{ payment.name }}
+      </mat-panel-title>
+      <mat-panel-description>
+        ${{payment.amount}}
+        <mat-icon>{{getIcon(payment.method)}}</mat-icon>
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <div>
+      <app-payment-form
+        [amount]="payment.amount"
+        [method]="payment.method"
+        (emitter)="handleChange($event, payment.id)"
+      ></app-payment-form>
+    </div>
+  </mat-expansion-panel>
+</mat-accordion>
+
+<div>
+  <button mat-raised-button color="primary">
+    $ {{getTotal()}}
+  </button>
+</div>
